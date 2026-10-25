@@ -12,7 +12,7 @@ from typing import Dict
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 
-VERSION = "v1"  # change to "v2", push, and re-run the pipeline for the 2nd-run demo
+VERSION = "v2"  # change to "v2", push, and re-run the pipeline for the 2nd-run demo
 RADIUS_KM = 10.0
 
 app = FastAPI(title="Food Rescue Network API", version=VERSION)
