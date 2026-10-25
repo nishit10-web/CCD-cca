@@ -63,9 +63,9 @@ pipeline {
                     kubectl get svc food-rescue-svc
                     URL=http://$(minikube ip):30080
                     echo "App URL: $URL"
-                    curl -fsS $URL/health
+                    curl -fsS --retry 5 --retry-delay 3 --retry-connrefused --max-time 10 $URL/health
                     echo
-                    curl -fsS $URL/
+                    curl -fsS --retry 5 --retry-delay 3 --retry-connrefused --max-time 10 $URL/
                 '''
             }
         }
